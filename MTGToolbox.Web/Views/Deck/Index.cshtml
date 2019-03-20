@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MTGToolbox.Core.IDeck>
+
+@{
+    ViewData["Title"] = "Deck";
+}
+
+<h2>Deck</h2>
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.Name
+    </p>
+}

@@ -8,6 +8,7 @@ namespace MTGToolbox.Core
     {
         int Id { get; set; }
         string Name { get; set; }
-        IEnumerable<ICard> Cards { get; set; }
+
+        ICollection<DeckCard> DeckCards { get; set; }
     }
 }

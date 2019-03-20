@@ -21,6 +21,7 @@ namespace MTGToolbox.Web
         {
             services.AddDbContext<MTGToolboxContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MTGToolboxDB")));
             services.AddTransient<ICardRepository, CardRepository>();
+            services.AddTransient<IDeckRepository, DeckRepository>();
             services.AddMvc();
         }
 

@@ -18,7 +18,7 @@ namespace MTGToolbox.Web.Controllers
 
         public IActionResult GridList()
         {
-             var cards = _cardRepository.GetCards();
+            var cards = _cardRepository.GetCards();
 
             return View(cards);
         }
