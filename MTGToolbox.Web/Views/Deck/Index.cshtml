@@ -9,6 +9,6 @@
 @foreach (var item in Model)
 {
     <p>
-        @item.Name
+        @Html.ActionLink(@item.Name, "DeckList", "Deck", new { id = item.Id }, null)
     </p>
 }

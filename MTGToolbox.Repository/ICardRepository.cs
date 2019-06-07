@@ -9,7 +9,5 @@ namespace MTGToolbox.Repository
         IEnumerable<Card> GetCards();
         Card GetCardById(int id);
         Card GetCardByName(string cardName);
-
-        IEnumerable<Card> GetCardsByDeck();
     }
 }

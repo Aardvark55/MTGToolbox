@@ -9,8 +9,9 @@ namespace MTGToolbox.Core
         public int Id { get; set; }
         public int DeckId { get; set; }
         public int CardId { get; set; }
+        public int Quantity { get; set; }
 
-        public Deck Deck { get; set; }
-        public Card Card { get; set; }
+        public virtual Deck deck { get; set; }
+        public virtual Card card { get; set; }
     }
 }

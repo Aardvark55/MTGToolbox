@@ -9,8 +9,9 @@ namespace MTGToolbox.Core
         int Id { get; set; }
         int DeckId { get; set; }
         int CardId { get; set; }
+        int Quantity { get; set; }
 
-        Deck Deck { get; set; }
-        Card Card { get; set; }
+        Deck deck { get; set; }
+        Card card { get; set; }
     }
 }

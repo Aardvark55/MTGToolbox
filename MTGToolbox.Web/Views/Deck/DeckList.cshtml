@@ -1,0 +1,21 @@
+﻿@model MTGToolbox.Core.Deck
+
+@{
+    ViewData["Title"] = "DeckList";
+}
+
+<h2>Deck List</h2>
+
+<div>
+    <h4>Deck</h4>
+
+    <div>
+        @foreach (var deckCard in Model.DeckCards)
+        {
+            <div>
+                @deckCard.card.Name
+            </div>
+        }
+    </div>
+    
+</div>
