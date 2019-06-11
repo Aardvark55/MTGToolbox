@@ -6,10 +6,9 @@ namespace MTGToolbox.Core
 {
     public interface IDeckCard
     {
-        int Id { get; set; }
         int DeckId { get; set; }
         int CardId { get; set; }
-        int Quantity { get; set; }
+        Int16 Quantity { get; set; }
 
         Deck deck { get; set; }
         Card card { get; set; }

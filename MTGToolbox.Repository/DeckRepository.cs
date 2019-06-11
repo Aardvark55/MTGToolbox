@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using MTGToolbox.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace MTGToolbox.Repository
 {
@@ -23,7 +23,13 @@ namespace MTGToolbox.Repository
 
         public Deck GetDeckById(int id)
         {
-            return context.Decks.Find(id);
+            //Deck deck = context.Decks.Find(id);
+
+            //context.Entry(deck).Reference(d => d.DeckCards).Load();
+
+            Deck deck = context.Decks.Include(d => d.DeckCards).ThenInclude(dc => dc.Card);
+
+            return deck;
         }
 
         public Deck GetDeckByName(string name)
