@@ -10,10 +10,10 @@
     <h4>Deck</h4>
 
     <div>
-        @foreach (var deckCard in Model.DeckCards)
+        @foreach (var deckCard in Model.DeckList)
         {
             <div>
-                @deckCard.card.Name
+                @deckCard.Card.Name
             </div>
         }
     </div>

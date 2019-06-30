@@ -4,11 +4,12 @@ using System.Text;
 
 namespace MTGToolbox.Core
 {
-    public interface IDeck
+    public interface ISet
     {
         int Id { get; set; }
         string Name { get; set; }
+        string Code { get; set; }
 
-        ICollection<DeckList> DeckList { get; }
+        ICollection<SetCards> SetCards { get; }
     }
 }

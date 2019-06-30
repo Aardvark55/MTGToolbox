@@ -10,6 +10,7 @@ namespace MTGToolbox.Core
         string Name { get; set; }
         string ImageFile { get; set; }
 
-        ICollection<DeckCard> DeckCards { get; }
+        ICollection<DeckList> DeckList { get; }
+        ICollection<SetCards> SetCards { get; }
     }
 }

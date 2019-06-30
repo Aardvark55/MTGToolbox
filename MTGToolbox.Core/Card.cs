@@ -11,6 +11,7 @@ namespace MTGToolbox.Core
         public string Name { get; set; }
         public string ImageFile { get; set; }
 
-        public virtual ICollection<DeckCard> DeckCards { get; } = new List<DeckCard>();
+        public virtual ICollection<DeckList> DeckList { get; } = new List<DeckList>();
+        public virtual ICollection<SetCards> SetCards { get; } = new List<SetCards>();
     }
 }

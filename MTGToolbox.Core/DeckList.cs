@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MTGToolbox.Core
 {
-    public class DeckCard : IDeckCard
+    public class DeckList : IDeckList
     {
         [ForeignKey("Deck")]
         public int DeckId { get; set; }
@@ -15,7 +15,7 @@ namespace MTGToolbox.Core
 
         public Int16 Quantity { get; set; }
 
-        public virtual Deck deck { get; set; }
-        public virtual Card card { get; set; }
+        public virtual Deck Deck { get; set; }
+        public virtual Card Card { get; set; }
     }
 }

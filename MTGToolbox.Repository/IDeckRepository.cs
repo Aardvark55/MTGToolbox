@@ -6,9 +6,9 @@ namespace MTGToolbox.Repository
 {
     public interface IDeckRepository
     {
-        IEnumerable<Deck> GetDecks();
-        Deck GetDeckById(int id);
-        Deck GetDeckByName(string deckName);
+        IEnumerable<IDeck> GetDecks();
+        IDeck GetDeckById(int id);
+        IDeck GetDeckByName(string deckName);
 
     }
 }

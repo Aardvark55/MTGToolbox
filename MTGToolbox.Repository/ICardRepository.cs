@@ -6,8 +6,12 @@ namespace MTGToolbox.Repository
 {
     public interface ICardRepository
     {
-        IEnumerable<Card> GetCards();
-        Card GetCardById(int id);
-        Card GetCardByName(string cardName);
+        IEnumerable<ICard> GetCards();
+        ICard GetCardById(int id);
+        ICard GetCardByName(string cardName);
+
+        void AddCard(ICard card);
+
+        void Save();
     }
 }

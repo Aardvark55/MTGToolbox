@@ -1,36 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MTGToolbox.Core;
-using Microsoft.EntityFrameworkCore;
 
 namespace MTGToolbox.Repository
 {
-    public class DeckRepository : IDeckRepository, IDisposable
+    public class SetRepository : ISetRepository, IDisposable
     {
         private MTGToolboxContext context;
         private bool disposed = false;
 
-        public DeckRepository(MTGToolboxContext context)
+        public SetRepository(MTGToolboxContext context)
         {
             this.context = context;
         }
 
-        public IEnumerable<IDeck> GetDecks()
+        public IEnumerable<ISet> GetSets()
         {
-            return context.Decks.ToList();
+            return context.Sets.ToList();
         }
 
-        public IDeck GetDeckById(int id)
+        public void AddSet(ISet set)
         {
-            IDeck deck = context.Decks.Include(d => d.DeckList).ThenInclude(dc => dc.Card).Single();
-
-            return deck;
+            if (!(context.Sets.Any(s => s.Code == set.Code)))
+            {
+                context.Sets.Add(set);
+            }
         }
 
-        public IDeck GetDeckByName(string name)
+        public ISet GetSetByCode(string setCode)
         {
-            return context.Decks.Find(name);
+            return context.Sets.Find(setCode);
+        }
+
+        public void Save()
+        {
+            context.SaveChanges();
         }
 
         protected virtual void Dispose(bool disposing)
