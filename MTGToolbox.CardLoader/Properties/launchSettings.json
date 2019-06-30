@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MTGToolbox.CardLoader": {
+      "commandName": "Project",
+      "commandLineArgs": "KTK"
+    }
+  }
+}

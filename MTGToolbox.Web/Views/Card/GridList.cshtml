@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MTGToolbox.Core.ICard>
+
+@{
+    ViewData["Title"] = "GridList";
+}
+
+<h2>Cards</h2>
+
+<div class="flex-grid">
+        @foreach (var item in Model)
+        {
+            <div>
+                <img class="img-thumbnail" src="@Url.Content(@item.ImageFile)" />
+            </div>
+        }
+</div>
