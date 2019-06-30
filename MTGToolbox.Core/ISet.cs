@@ -10,6 +10,6 @@ namespace MTGToolbox.Core
         string Name { get; set; }
         string Code { get; set; }
 
-        ICollection<SetCards> SetCards { get; }
+        ICollection<ISetCards> SetCards { get; }
     }
 }

@@ -22,13 +22,13 @@ namespace MTGToolbox.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DeckList>().HasKey(dl => new { dl.DeckId, dl.CardId });
-            modelBuilder.Entity<DeckList>().HasOne(dl => dl.Card).WithMany(d => d.DeckList).HasForeignKey(dl => dl.CardId);
-            modelBuilder.Entity<DeckList>().HasOne(dl => dl.Deck).WithMany(d => d.DeckList).HasForeignKey(dl => dl.DeckId);
+            modelBuilder.Entity<IDeckList>().HasKey(dl => new { dl.DeckId, dl.CardId });
+            modelBuilder.Entity<IDeckList>().HasOne(dl => dl.Card).WithMany(d => d.DeckList).HasForeignKey(dl => dl.CardId);
+            modelBuilder.Entity<IDeckList>().HasOne(dl => dl.Deck).WithMany(d => d.DeckList).HasForeignKey(dl => dl.DeckId);
 
-            modelBuilder.Entity<SetCards>().HasKey(sl => new { sl.SetId, sl.CardId });
-            modelBuilder.Entity<SetCards>().HasOne(sl => sl.Card).WithMany(s => s.SetCards).HasForeignKey(sl => sl.CardId);
-            modelBuilder.Entity<SetCards>().HasOne(sl => sl.Set).WithMany(s => s.SetCards).HasForeignKey(sl => sl.SetId);
+            modelBuilder.Entity<ISetCards>().HasKey(sl => new { sl.SetId, sl.CardId });
+            modelBuilder.Entity<ISetCards>().HasOne(sl => sl.Card).WithMany(s => s.SetCards).HasForeignKey(sl => sl.CardId);
+            modelBuilder.Entity<ISetCards>().HasOne(sl => sl.Set).WithMany(s => s.SetCards).HasForeignKey(sl => sl.SetId);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

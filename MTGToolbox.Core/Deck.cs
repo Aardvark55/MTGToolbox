@@ -9,6 +9,6 @@ namespace MTGToolbox.Core
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<DeckList> DeckList { get; } = new List<DeckList>();
+        public virtual ICollection<IDeckList> DeckList { get; } = new List<IDeckList>();
     }
 }

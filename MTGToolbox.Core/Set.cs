@@ -10,6 +10,6 @@ namespace MTGToolbox.Core
         public string Name { get; set; }
         public string Code { get; set; }
 
-        public virtual ICollection<SetCards> SetCards { get; } = new List<SetCards>();
+        public virtual ICollection<ISetCards> SetCards { get; } = new List<ISetCards>();
     }
 }

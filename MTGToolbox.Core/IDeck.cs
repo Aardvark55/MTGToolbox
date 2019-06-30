@@ -9,6 +9,6 @@ namespace MTGToolbox.Core
         int Id { get; set; }
         string Name { get; set; }
 
-        ICollection<DeckList> DeckList { get; }
+        ICollection<IDeckList> DeckList { get; }
     }
 }
