@@ -35,7 +35,7 @@ namespace MTGToolbox.Repository
         {
             if (!(context.Cards.Any(c => c.Name == card.Name)))
             {
-                context.Cards.Add(card);
+                context.Cards.Add((Card)card);
             }
         }
 

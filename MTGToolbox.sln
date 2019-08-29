@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTGToolbox.Core", "MTGToolb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTGToolbox.UnitTests", "MTGToolbox.UnitTests\MTGToolbox.UnitTests.csproj", "{027158AB-EB25-4AAC-894A-4F2E4BE878AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTGToolbox.Importer", "MTGToolbox.Importer\MTGToolbox.Importer.csproj", "{AB071E0C-2A9E-4469-AC25-B6314CD9312A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTGToolbox.CardLoader", "MTGToolbox.CardLoader\MTGToolbox.CardLoader.csproj", "{15A01002-E50E-4F8A-B53E-836FFEA4C0B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTGToolbox.CardLoader", "MTGToolbox.CardLoader\MTGToolbox.CardLoader.csproj", "{15A01002-E50E-4F8A-B53E-836FFEA4C0B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{027158AB-EB25-4AAC-894A-4F2E4BE878AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{027158AB-EB25-4AAC-894A-4F2E4BE878AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{027158AB-EB25-4AAC-894A-4F2E4BE878AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB071E0C-2A9E-4469-AC25-B6314CD9312A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB071E0C-2A9E-4469-AC25-B6314CD9312A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB071E0C-2A9E-4469-AC25-B6314CD9312A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB071E0C-2A9E-4469-AC25-B6314CD9312A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{15A01002-E50E-4F8A-B53E-836FFEA4C0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15A01002-E50E-4F8A-B53E-836FFEA4C0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A01002-E50E-4F8A-B53E-836FFEA4C0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
