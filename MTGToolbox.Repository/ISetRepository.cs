@@ -6,11 +6,11 @@ namespace MTGToolbox.Repository
 {
     public interface ISetRepository
     {
-        IEnumerable<ISet> GetSets();
+        IEnumerable<Set> GetSets();
 
-        ISet GetSetByCode(string setCode);
+        Set GetSetByCode(string setCode);
 
-        void AddSet(ISet set);
+        void AddSet(Set set);
         void Save();
     }
 }

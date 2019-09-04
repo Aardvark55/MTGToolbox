@@ -16,19 +16,19 @@ namespace MTGToolbox.Repository
             this.context = context;
         }
 
-        public IEnumerable<IDeck> GetDecks()
+        public IEnumerable<Deck> GetDecks()
         {
             return context.Decks.ToList();
         }
 
-        public IDeck GetDeckById(int id)
+        public Deck GetDeckById(int id)
         {
-            IDeck deck = context.Decks.Include(d => d.DeckList).ThenInclude(dc => dc.Card).Single();
+            Deck deck = context.Decks.Include(d => d.DeckList).ThenInclude(dc => dc.Card).Single();
 
             return deck;
         }
 
-        public IDeck GetDeckByName(string name)
+        public Deck GetDeckByName(string name)
         {
             return context.Decks.Find(name);
         }

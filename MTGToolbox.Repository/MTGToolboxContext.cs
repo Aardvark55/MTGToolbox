@@ -18,7 +18,7 @@ namespace MTGToolbox.Repository
         public DbSet<Deck> Decks { get; set; }
         public DbSet<DeckList> DeckLists { get; set; }
         public DbSet<Set> Sets { get; set; }
-        public DbSet<SetCards> SetLists { get; set; }
+        public DbSet<SetCards> SetCards { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

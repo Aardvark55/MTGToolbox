@@ -5,22 +5,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MTGToolbox.Core
 {
-    public class SetCards : ISetCards
+    public class SetCards
     {
-        public SetCards(ISet set, ICard card, string rarity)
+        public SetCards(Set set, Card card, string rarity, string imageFile)
         {
             SetId = set.Id;
             CardId = card.Id;
             Rarity = rarity;
+            ImageFile = imageFile;
         }
 
-        [ForeignKey("Set")]
+        public SetCards() { }
+
         public int SetId { get; set; }
 
-        [ForeignKey("Card")]
         public int CardId { get; set; }
 
         public string Rarity { get; set; }
+
+        public string ImageFile { get; set; }
 
         public virtual Set Set { get; set; }
         public virtual Card Card { get; set; }

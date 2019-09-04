@@ -16,22 +16,22 @@ namespace MTGToolbox.Repository
             this.context = context;
         }
 
-        public IEnumerable<ICard> GetCards()
+        public IEnumerable<Card> GetCards()
         {
             return context.Cards.ToList();
         }
 
-        public ICard GetCardById(int id)
+        public Card GetCardById(int id)
         {
             return context.Cards.Find(id);
         }
 
-        public ICard GetCardByName(string name)
+        public Card GetCardByName(string name)
         {
             return context.Cards.Find(name);
         }
 
-        public void AddCard(ICard card)
+        public void AddCard(Card card)
         {
             if (!(context.Cards.Any(c => c.Name == card.Name)))
             {

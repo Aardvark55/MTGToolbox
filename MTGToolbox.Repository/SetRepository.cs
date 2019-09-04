@@ -16,12 +16,12 @@ namespace MTGToolbox.Repository
             this.context = context;
         }
 
-        public IEnumerable<ISet> GetSets()
+        public IEnumerable<Set> GetSets()
         {
             return context.Sets.ToList();
         }
 
-        public void AddSet(ISet set)
+        public void AddSet(Set set)
         {
             if (!(context.Sets.Any(s => s.Code == set.Code)))
             {
@@ -29,9 +29,9 @@ namespace MTGToolbox.Repository
             }
         }
 
-        public ISet GetSetByCode(string setCode)
+        public Set GetSetByCode(string setCode)
         {
-            return context.Sets.Find(setCode);
+            return context.Sets.Where(s => s.Code == setCode).First();
         }
 
         public void Save()

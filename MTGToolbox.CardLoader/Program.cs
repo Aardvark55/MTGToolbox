@@ -44,28 +44,31 @@ namespace MTGToolbox.CardLoader
 
             CardService cardService = new CardService();
 
-            ISet set = setRepository.GetSetByCode(setCode);
+            Set set = setRepository.GetSetByCode(setCode);
 
-            var cardResults = cardService.Where(x => x.Set, setCode).All();
+            int cardResultsPage = 1;
+            var cardResults = cardService.Where(x => x.Set, setCode).Where(x => x.Page, cardResultsPage).All();
 
-            if (cardResults.IsSuccess)
+            do
             {
                 foreach (var item in cardResults.Value)
                 {
-                    ICard card = new Card();
+                    Card card = new Card();
                     card.Name = item.Name;
 
-                    if (item.MultiverseId != null)
-                        card.ImageFile = item.ImageUrl.ToString();
+                    card.ImageFile = item.ImageUrl?.ToString();
+
+                    card.SetCards = new List<SetCards> { new SetCards { Set = set, Card = card, Rarity = item.Rarity, ImageFile = item.ImageUrl?.ToString() } };
 
                     cardRepository.AddCard(card);
-
-                    SetCards setCards = new SetCards(set, card, item.Rarity);
                 }
 
-                cardRepository.Save();
-            }
+                cardResultsPage += 1;
+                cardResults = cardService.Where(x => x.Set, setCode).Where(x => x.Page, cardResultsPage).All();
 
+            } while (cardResults.Value.Count > 1);
+
+            cardRepository.Save();
         }
 
         static void LoadSets(MTGToolboxContext context)
